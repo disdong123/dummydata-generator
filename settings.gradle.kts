@@ -1,11 +1,9 @@
-rootProject.name = "springboot-simple-template"
+rootProject.name = "dummydata-generator"
 
 include(
-    "subp-persistence",
-    "subp-api-client",
-    "subp-cache",
-    "subp-common",
-    "subp-server"
+    "ddgen-persistence",
+    "ddgen-common",
+    "ddgen-server"
 )
 
 enableFeaturePreview("VERSION_CATALOGS")
