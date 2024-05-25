@@ -1,18 +1,18 @@
 services:
   mysql:
-    container_name: springboot_simple_template_mysql
+    container_name: dummydata-generator_mysql
     image: mysql:8
     ports:
       - '3300:3306'
     environment:
       TZ: 'Asia/Seoul'
-      MYSQL_DATABASE: springboot_simple_template
+      MYSQL_DATABASE: dummydata-generator
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
       - ./infra/mysql/data:/var/lib/mysql
     networks:
-      - springboot-simple-template
+      - dummydata-generator
 networks:
-  springboot-simple-template:
-    name: springboot-simple-template
+  dummydata-generator:
+    name: dummydata-generator
     driver: bridge

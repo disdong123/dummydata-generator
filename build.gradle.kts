@@ -36,6 +36,7 @@ subprojects {
         implementation(libs.spring.boot.configuration.processor)
         implementation(libs.springdoc.openapi.starter.webmvc.ui)
         implementation(platform(libs.spring.cloud.dependencies))
+        implementation(libs.fixture.monkey.starter.kotlin)
 
         testImplementation(libs.spring.boot.starter.test)
         testImplementation(libs.mockito.kotlin)
