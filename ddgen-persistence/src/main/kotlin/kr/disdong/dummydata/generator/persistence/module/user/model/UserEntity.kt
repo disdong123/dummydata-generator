@@ -27,3 +27,17 @@ class UserEntity(
     )
     val phone: String,
 ) : BaseEntity()
+
+@Entity(name = "post")
+class PostEntity(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long = 0,
+
+    @Column(
+        nullable = false,
+        unique = false,
+        length = 100,
+    )
+    var content: String,
+) : BaseEntity()

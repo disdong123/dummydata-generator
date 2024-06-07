@@ -37,6 +37,9 @@ subprojects {
         implementation(libs.springdoc.openapi.starter.webmvc.ui)
         implementation(platform(libs.spring.cloud.dependencies))
         implementation(libs.fixture.monkey.starter.kotlin)
+        implementation("org.reflections:reflections:0.10.2")
+        // https://mvnrepository.com/artifact/com.squareup/kotlinpoet
+        implementation("com.squareup:kotlinpoet:1.16.0")
 
         testImplementation(libs.spring.boot.starter.test)
         testImplementation(libs.mockito.kotlin)

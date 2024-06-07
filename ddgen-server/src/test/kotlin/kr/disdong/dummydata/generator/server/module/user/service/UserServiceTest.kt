@@ -1,37 +1,15 @@
 package kr.disdong.dummydata.generator.server.module.user.service
 
-import kr.disdong.dummydata.generator.persistence.module.user.model.UserEntity
-import kr.disdong.dummydata.generator.persistence.module.user.repository.UserRepository
-import kr.disdong.dummydata.generator.server.module.user.dto.CreateUserBody
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertNotNull
+import com.navercorp.fixturemonkey.buildergroup.ArbitraryBuilderGroup
 import org.junit.jupiter.api.Test
-import org.mockito.Mockito
-import org.mockito.Mockito.mock
-import org.mockito.kotlin.any
-import org.mockito.kotlin.whenever
 
 internal class UserServiceTest {
 
-    private val userRepository = mock(UserRepository::class.java)
-    private val sut = UserService(userRepository)
-
     @Test
-    fun `샘플 테스트 1`() {
-        whenever(userRepository.findByUserId(any())).thenReturn(UserEntity(1, "name", "010"))
-
-        val response = sut.getByUserId(1)
-
-        assertNotNull(response)
-    }
-
-    @Test
-    fun `샘플 테스트 2`() {
-        Mockito.`when`(userRepository.save(any())).thenReturn(UserEntity(1, "name", "010"))
-
-        val response = sut.create(CreateUserBody("name", "010"))
-
-        assertEquals("name", response.name)
-        assertEquals("010", response.phone)
+    fun a() {
+        println(ArbitraryBuilderGroup::class.java.name)
+        println(ArbitraryBuilderGroup::class.java.packageName)
+        println(ArbitraryBuilderGroup::class.java.simpleName)
+        println(ArbitraryBuilderGroup::class.java.declaredMethods[0].name)
     }
 }
