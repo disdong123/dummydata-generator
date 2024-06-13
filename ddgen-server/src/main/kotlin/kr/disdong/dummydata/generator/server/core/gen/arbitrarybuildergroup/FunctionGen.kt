@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.server.core.gen
+package kr.disdong.dummydata.generator.server.core.gen.arbitrarybuildergroup
 
 import com.navercorp.fixturemonkey.buildergroup.ArbitraryBuilderGroup
 import com.navercorp.fixturemonkey.resolver.ArbitraryBuilderCandidateFactory
@@ -42,6 +42,10 @@ class FunctionGen(
 
         for (field in entity.declaredFields) {
             if (field.isColumn().not()) {
+                continue
+            }
+
+            if (field.type != String::class.java) {
                 continue
             }
 

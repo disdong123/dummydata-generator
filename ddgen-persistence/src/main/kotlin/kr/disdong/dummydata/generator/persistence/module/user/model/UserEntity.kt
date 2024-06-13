@@ -5,7 +5,9 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import kr.disdong.dummydata.generator.persistence.common.model.BaseEntity
+import org.springframework.data.annotation.CreatedDate
+import org.springframework.data.annotation.LastModifiedDate
+import java.time.ZonedDateTime
 
 @Entity(name = "user")
 class UserEntity(
@@ -26,7 +28,14 @@ class UserEntity(
         length = 20,
     )
     val phone: String,
-) : BaseEntity()
+    @Column
+    @CreatedDate
+    var createdAt: ZonedDateTime = ZonedDateTime.now(),
+
+    @Column
+    @LastModifiedDate
+    var updatedAt: ZonedDateTime = ZonedDateTime.now(),
+)
 
 @Entity(name = "post")
 class PostEntity(
@@ -39,5 +48,20 @@ class PostEntity(
         unique = false,
         length = 100,
     )
-    var content: String,
-) : BaseEntity()
+    var name: String,
+
+    @Column(
+        nullable = false,
+        unique = false,
+        length = 20,
+    )
+    val phone: String,
+
+    @Column
+    @CreatedDate
+    var createdAt: ZonedDateTime = ZonedDateTime.now(),
+
+    @Column
+    @LastModifiedDate
+    var updatedAt: ZonedDateTime = ZonedDateTime.now(),
+)

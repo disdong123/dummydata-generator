@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.server.core.gen
+package kr.disdong.dummydata.generator.server.core.gen.arbitrarybuildergroup
 
 import com.squareup.kotlinpoet.FileSpec
 
