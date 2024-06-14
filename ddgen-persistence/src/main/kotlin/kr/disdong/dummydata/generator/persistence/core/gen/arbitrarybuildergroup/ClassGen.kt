@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.server.core.gen.arbitrarybuildergroup
+package kr.disdong.dummydata.generator.persistence.core.gen.arbitrarybuildergroup
 
 import com.navercorp.fixturemonkey.buildergroup.ArbitraryBuilderGroup
 import com.squareup.kotlinpoet.ClassName

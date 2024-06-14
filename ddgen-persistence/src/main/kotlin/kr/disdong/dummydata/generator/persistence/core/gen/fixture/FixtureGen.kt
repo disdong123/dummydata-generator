@@ -1,6 +1,6 @@
-package kr.disdong.dummydata.generator.server.core.gen.fixture
+package kr.disdong.dummydata.generator.persistence.core.gen.fixture
 
-import kr.disdong.dummydata.generator.server.core.gen.GenOptions
+import kr.disdong.dummydata.generator.persistence.core.gen.GenOptions
 import java.io.File
 
 object FixtureGen {

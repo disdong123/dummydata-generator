@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.server.core.gen.fixture
+package kr.disdong.dummydata.generator.persistence.core.gen.fixture
 
 import com.navercorp.fixturemonkey.FixtureMonkey
 import com.navercorp.fixturemonkey.kotlin.KotlinPlugin

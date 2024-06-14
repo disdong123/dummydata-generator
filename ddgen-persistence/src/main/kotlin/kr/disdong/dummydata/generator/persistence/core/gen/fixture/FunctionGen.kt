@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.server.core.gen.fixture
+package kr.disdong.dummydata.generator.persistence.core.gen.fixture
 
 import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.KModifier

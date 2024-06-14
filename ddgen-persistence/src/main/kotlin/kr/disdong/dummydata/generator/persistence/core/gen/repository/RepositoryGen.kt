@@ -1,8 +1,8 @@
-package kr.disdong.dummydata.generator.server.core.gen.repository
+package kr.disdong.dummydata.generator.persistence.core.gen.repository
 
 import ClassGen
 import FileGen
-import kr.disdong.dummydata.generator.server.core.gen.GenOptions
+import kr.disdong.dummydata.generator.persistence.core.gen.GenOptions
 import java.io.File
 
 object RepositoryGen {

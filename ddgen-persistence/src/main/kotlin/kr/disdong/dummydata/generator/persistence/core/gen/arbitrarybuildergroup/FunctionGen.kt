@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.server.core.gen.arbitrarybuildergroup
+package kr.disdong.dummydata.generator.persistence.core.gen.arbitrarybuildergroup
 
 import com.navercorp.fixturemonkey.buildergroup.ArbitraryBuilderGroup
 import com.navercorp.fixturemonkey.resolver.ArbitraryBuilderCandidateFactory
@@ -24,7 +24,10 @@ class FunctionGen(
     }
 
     private fun FunSpec.Builder.createBuilderList(): FunSpec.Builder {
-        return this.addStatement("val builderList = %T.create()", ClassName(ArbitraryBuilderCandidateList::class.java.packageName, ArbitraryBuilderCandidateList::class.java.simpleName))
+        return this.addStatement(
+            "val builderList = %T.create()",
+            ClassName(ArbitraryBuilderCandidateList::class.java.packageName, ArbitraryBuilderCandidateList::class.java.simpleName)
+        )
     }
 
     private fun FunSpec.Builder.addAllToBuilderList(): FunSpec.Builder {
@@ -37,7 +40,11 @@ class FunctionGen(
 
     private fun FunSpec.Builder.addToBuilderList(entity: Class<*>) {
         this.addCode("builderList.add(\n")
-            .addCode("%T.of(%T::class.java)\n", ClassName(ArbitraryBuilderCandidateFactory::class.java.packageName, ArbitraryBuilderCandidateFactory::class.java.simpleName), entity)
+            .addCode(
+                "%T.of(%T::class.java)\n",
+                ClassName(ArbitraryBuilderCandidateFactory::class.java.packageName, ArbitraryBuilderCandidateFactory::class.java.simpleName),
+                entity
+            )
             .addCode(".builder {\n")
 
         for (field in entity.declaredFields) {
@@ -50,7 +57,12 @@ class FunctionGen(
             }
 
             val column: Column = field.getColumn()
-            this.addCode("it.set(%S, %T.strings().ofMinLength(0).ofMaxLength(%L))\n", field.name, ClassName(Arbitraries::class.java.packageName, Arbitraries::class.java.simpleName), column.length)
+            this.addCode(
+                "    it.set(%S, %T.strings().ofMinLength(0).ofMaxLength(%L))\n",
+                field.name,
+                ClassName(Arbitraries::class.java.packageName, Arbitraries::class.java.simpleName),
+                column.length
+            )
         }
 
         this.addCode("}\n")

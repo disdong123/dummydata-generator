@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.server.core.gen.arbitrarybuildergroup
+package kr.disdong.dummydata.generator.persistence.core.gen.fixture
 
 import com.squareup.kotlinpoet.FileSpec
 
@@ -11,6 +11,7 @@ class FileGen(
     fun `do`(): FileSpec {
         return FileSpec.builder(packageName, fileName)
             .addType(classGen.`do`())
+            .addImport("com.navercorp.fixturemonkey.kotlin", "giveMeBuilder")
             .build()
     }
 }

@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.server.core.util
+package kr.disdong.dummydata.generator.persistence.core.util
 
 import jakarta.persistence.Entity
 import org.reflections.Reflections

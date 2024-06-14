@@ -1,4 +1,4 @@
-package kr.disdong.dummydata.generator.persistence.module.user.model
+package kr.disdong.dummydata.generator.persistence.module.post.model
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -9,11 +9,14 @@ import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.ZonedDateTime
 
-@Entity(name = "user")
-class UserEntity(
+@Entity(name = "post")
+class PostEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
+
+    @Column
+    val userId: Long,
 
     @Column(
         nullable = false,
@@ -28,6 +31,7 @@ class UserEntity(
         length = 20,
     )
     val phone: String,
+
     @Column
     @CreatedDate
     val createdAt: ZonedDateTime = ZonedDateTime.now(),

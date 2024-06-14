@@ -1,9 +1,9 @@
-package kr.disdong.dummydata.generator.server.output
+package kr.disdong.dummydata.generator.persistence.output
 
 import com.navercorp.fixturemonkey.FixtureMonkey
 import com.navercorp.fixturemonkey.kotlin.KotlinPlugin
 import com.navercorp.fixturemonkey.kotlin.giveMeBuilder
-import kr.disdong.dummydata.generator.persistence.module.user.model.PostEntity
+import kr.disdong.dummydata.generator.persistence.module.post.model.PostEntity
 import kr.disdong.dummydata.generator.persistence.module.user.model.UserEntity
 
 public object GenFixture {
